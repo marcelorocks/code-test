@@ -1,0 +1,11 @@
+en:
+  loading_zipcodes: "Loading Zipcodes..."
+  done: "Done."
+  select_features:  "Please select the desired feature:"
+  feature_one:      "1. States with population above 10 Million"
+  feature_two:      "2. Average City Population By State"
+  feature_three:    "3. Largest And Smallest Cities By State"
+  exit_option:      "4. Quit"
+  invalid_option:   "{option} is not a valid option. Try Again."
+  enter_state:      "Please enter the state you would like to see data for. (Ex: CA, MI, etc)"
+  invalid_state:    "The state entered is invalid. Please try again."
