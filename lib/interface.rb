@@ -96,7 +96,7 @@ class Interface
     puts major_states_json
   end
 
-  def average_population_for_state_json
+  def average_population_for_state_json(state)
     data_source.average_population_for_state(state).to_json
   end
 
@@ -108,11 +108,11 @@ class Interface
       puts t('invalid_state')
       average_population_for_state
     else
-      puts average_population_for_state_json
+      puts average_population_for_state_json(state)
     end
   end
 
-  def boundary_cities_for_state_json
+  def boundary_cities_for_state_json(state)
     data_source.boundary_cities_for_state(state).to_json
   end
 
@@ -124,7 +124,7 @@ class Interface
       puts t('invalid_state')
       boundary_cities_for_state
     else
-      puts boundary_cities_for_state_json
+      puts boundary_cities_for_state_json(state)
     end
   end
 

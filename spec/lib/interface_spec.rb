@@ -53,16 +53,14 @@ describe Interface do
 
     it 'should present proper data for print_average_population_for_state' do
       expect(DataSource).to receive(:new).with("http://media.mongodb.org/zips.json").and_return(@data_source)
-      expect(subject).to receive(:state).and_return('CA')
       subject.load_data_source
-      expect(subject.average_population_for_state_json).to eql("{\"name\":\"CA\",\"population\":45000000,\"cities\":2,\"average_population\":22500000}")
+      expect(subject.average_population_for_state_json('CA')).to eql("{\"name\":\"CA\",\"population\":45000000,\"cities\":2,\"average_population\":22500000}")
     end
 
     it 'should present proper data for print_average_population_for_state' do
       expect(DataSource).to receive(:new).with("http://media.mongodb.org/zips.json").and_return(@data_source)
-      expect(subject).to receive(:state).and_return('CA')
       subject.load_data_source
-      expect(subject.boundary_cities_for_state_json).to eql("{\"name\":\"CA\",\"population\":45000000,\"cities\":2,\"average_population\":22500000,\"biggest_city\":{\"name\":\"Livermore\",\"population\":43000000},\"smallest_city\":{\"name\":\"Mountain View\",\"population\":2000000}}")
+      expect(subject.boundary_cities_for_state_json('CA')).to eql("{\"name\":\"CA\",\"population\":45000000,\"cities\":2,\"average_population\":22500000,\"biggest_city\":{\"name\":\"Livermore\",\"population\":43000000},\"smallest_city\":{\"name\":\"Mountain View\",\"population\":2000000}}")
     end
 
   end
